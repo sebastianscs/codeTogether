@@ -64,11 +64,14 @@ header {
   align-items: center;
   box-sizing: border-box;
 }
+header .logo {
+  border-radius: 40px;
+}
 header img {
-  width: 120px;
+  width: 80px;
 }
 header i {
-  width: 50px;
+  width: 40px;
   cursor: pointer;
   display: inline-block;
 }
@@ -77,7 +80,6 @@ header i img {
 }
 
 .banner {
-  width: 100%;
   padding: 60px 0px;
   background-image: url("../img/banner.jpg");
   background-repeat: no-repeat;
@@ -133,16 +135,50 @@ header i img {
   margin: 0;
 }
 
-.cart {
-  width: 30%;
+.menu {
+  width: 500px;
   height: 100%;
   background-color: #FFF;
   padding: 20PX;
   box-sizing: border-box;
   position: fixed;
-  right: -100%;
+  left: -70%;
+  transition: all 0.25s ease;
   top: 100px;
   box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.3);
+}
+.menu.showMenu {
+  left: 0;
+  transition: all 0.25s ease;
+}
+.menu .titles {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.menu .titles h2 {
+  padding: 15px 0px;
+  cursor: pointer;
+}
+.menu .titles h2 span {
+  font-size: 1.5rem;
+}
+
+.cart {
+  width: 500px;
+  height: 100%;
+  background-color: #FFF;
+  padding: 20PX;
+  box-sizing: border-box;
+  position: fixed;
+  right: -60%;
+  transition: all 0.25s ease;
+  top: 100px;
+  box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.3);
+}
+.cart.show {
+  right: 0;
+  transition: all 0.25s ease;
 }
 .cart h2 {
   width: 100%;
@@ -174,6 +210,20 @@ header i img {
 .cart .delete-icon {
   width: 100%;
 }
+.cart .buy-button {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 80%;
+  margin: 0 auto;
+  border: 0;
+  background-color: #ee911e;
+  box-sizing: border-box;
+  padding: 8px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.3rem;
+}
 
 @media screen and (max-width: 820px) {
   header {
@@ -196,6 +246,16 @@ header i img {
   }
   .banner p {
     font-size: 1rem;
+  }
+  .cart {
+    width: 100%;
+    right: -110%;
+    top: 60px;
+  }
+  .menu {
+    width: 100%;
+    left: -110%;
+    top: 60px;
   }
   .products {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1r));
@@ -252,6 +312,9 @@ header i img {
     font-size: 0.7rem;
     margin: 5px 0;
   }
+  .menu {
+    top: 50px;
+  }
   .cart {
     margin: 17px 0;
     width: 100%;
@@ -259,6 +322,7 @@ header i img {
     flex-direction: column;
     box-sizing: border-box;
     padding: 5px;
+    top: 32px;
   }
   .cart div {
     width: 100%;
