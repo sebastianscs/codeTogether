@@ -63,6 +63,7 @@ header {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
+  position: fixed;
 }
 header .logo {
   border-radius: 40px;
@@ -80,11 +81,12 @@ header i img {
 }
 
 .banner {
+  top: 120px;
   padding: 60px 0px;
   background-image: url("../img/banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-y: 30%;
+  background-position-y: -50%;
   text-align: center;
   color: #FFFFFF;
 }
@@ -93,13 +95,15 @@ header i img {
   font-weight: 700;
   font-size: 30px;
   margin: 0 auto;
+  padding-top: 60px;
 }
 .banner p {
   width: 400px;
   font-weight: 500;
   font-size: 20 px;
   margin: 0 auto;
-  opacity: 0.75;
+  padding-top: 10px;
+  color: #fff;
 }
 
 .products {
@@ -111,28 +115,38 @@ header i img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
-.products article {
-  cursor: pointer;
+.products .product {
   text-align: center;
   padding: 20px;
   padding-bottom: 0;
   box-sizing: border-box;
 }
-.products img {
+.products .product img {
   width: 85%;
   height: 80%;
   margin-bottom: 15px;
+  cursor: pointer;
 }
-.products h3 {
+.products .product h3 {
   font-weight: 500;
   font-size: 16px;
   margin: 0;
   margin-bottom: 6px;
 }
-.products p {
+.products .product p {
   font-weight: 300;
   font-size: 14px;
   margin: 0;
+}
+.products .product .addToCart {
+  width: 85%;
+  color: #FFF;
+  border: 0;
+  border-radius: 3px;
+  margin: 5px 0;
+  padding: 5px 0;
+  background-color: #ee911e;
+  cursor: pointer;
 }
 
 .menu {
@@ -197,20 +211,40 @@ header i img {
   padding: 15px;
   box-sizing: border-box;
 }
-.cart img {
+.cart div img {
   width: 60px;
 }
-.cartp:nth-child(3) {
+.cart div p {
   font-weight: 500;
 }
-.cart i {
-  width: 30px;
+.cart div i {
+  width: 22px;
   cursor: pointer;
 }
-.cart .delete-icon {
+.cart div .delete-icon {
   width: 100%;
 }
-.cart .buy-button {
+.cart div input {
+  width: 30px;
+  height: 20px;
+  border: 0;
+  color: #494949;
+  font-weight: 300;
+  font-size: 0.95rem;
+  font-family: "Lexend", Arial, Helvetica, sans-serif;
+}
+.cart .cartFooter div {
+  display: flex;
+  justify-content: space-between;
+}
+.cart .cartFooter div h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.cart .cartFooter div span {
+  font-size: 1rem;
+}
+.cart .cartFooter .buy-button {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -293,22 +327,22 @@ header i img {
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 0.5rem;
   }
-  .products article {
+  .products .product {
     padding: 0;
   }
-  .products img {
+  .products .product img {
     width: 100%;
     padding: 0.5rem;
     box-sizing: border-box;
     margin: 0;
   }
-  .products h3 {
+  .products .product h3 {
     font-size: 0.8rem;
     padding: 0 0.5rem;
     box-sizing: border-box;
     margin: 0;
   }
-  .products p {
+  .products .product p {
     font-size: 0.7rem;
     margin: 5px 0;
   }
