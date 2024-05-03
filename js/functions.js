@@ -40,6 +40,7 @@ function addProductToShoppingCart(title,price,image){
             let quantity = elementsProductCart[i].parentElement.querySelector('.quantity');
             quantity.value++;
             updateShoppingCartTotal();
+            updateShoppingCartProducts();
             return;
             
         }
@@ -58,11 +59,23 @@ function addProductToShoppingCart(title,price,image){
     const cartContainer = document.querySelector('.cartContent')
     shoppingCartRow.setAttribute('class','productCart')
     cartContainer.append(shoppingCartRow);
-
+    
+    
     shoppingCartRow.querySelector('.remove').addEventListener('click', removeShoppingCart);
     
     shoppingCartRow.querySelector('.quantity').addEventListener('change', quantityChange);
+    updateShoppingCartProducts();
     updateShoppingCartTotal();
+}
+function updateShoppingCartProducts(){
+    const counterProducts  = document.querySelector("#counterProducts");
+    let quantityCounterProducts = 0;
+    const itemsCart = cart.querySelectorAll('.cartContent .productCart');
+    for (let i=0;i < itemsCart.length;i++){
+        let quantity = itemsCart[i].querySelector('.quantity');
+        quantityCounterProducts+= Number(quantity.value);
+    }
+    counterProducts.innerHTML=`${quantityCounterProducts}`;
 }
 
 function updateShoppingCartTotal(){
@@ -82,6 +95,7 @@ function removeShoppingCart(event){
     const buttonClicked = event.target;
     buttonClicked.closest('.productCart').remove();
     updateShoppingCartTotal();
+    updateShoppingCartProducts();
 }
 
 function quantityChange(event){
@@ -91,4 +105,5 @@ function quantityChange(event){
         
     }
     updateShoppingCartTotal();
+    updateShoppingCartProducts();
 }

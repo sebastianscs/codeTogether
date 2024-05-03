@@ -76,17 +76,29 @@ header i {
   cursor: pointer;
   display: inline-block;
 }
+header i span {
+  position: absolute;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+  right: 25px;
+  color: #FFF;
+  background-color: #494949;
+  border-radius: 25px;
+  font-size: 0.9rem;
+}
 header i img {
   width: 100%;
 }
 
 .banner {
-  top: 120px;
   padding: 60px 0px;
   background-image: url("../img/banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-y: -50%;
+  background-position-y: 40px;
   text-align: center;
   color: #FFFFFF;
 }
@@ -159,7 +171,7 @@ header i img {
   left: -70%;
   transition: all 0.25s ease;
   top: 100px;
-  box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.3);
+  box-shadow: 22px -1px 22px -15px rgba(0, 0, 0, 0.3);
 }
 .menu.showMenu {
   left: 0;
@@ -229,6 +241,7 @@ header i img {
   height: 20px;
   border: 0;
   color: #494949;
+  text-align: center;
   font-weight: 300;
   font-size: 0.95rem;
   font-family: "Lexend", Arial, Helvetica, sans-serif;
@@ -257,6 +270,7 @@ header i img {
   color: #fff;
   font-weight: 800;
   font-size: 1.3rem;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 820px) {
@@ -267,6 +281,15 @@ header i img {
   }
   header i {
     width: 30px;
+  }
+  header i span {
+    width: 15px;
+    height: 15px;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    right: 5px;
+    top: 12.5px;
   }
   header img {
     width: 50px;
@@ -310,6 +333,11 @@ header i img {
 @media screen and (max-width: 480px) {
   header i {
     width: 25px;
+  }
+  header i span {
+    width: 10px;
+    height: 10px;
+    font-size: 0.55rem;
   }
   header img {
     width: 40px;
