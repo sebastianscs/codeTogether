@@ -12,6 +12,11 @@ const menu = document.querySelector(".menu");
 menuIcon.addEventListener("click", ()=>{
     menu.classList.toggle("showMenu");
 });
+const closeMenu = document.querySelector(".closeIcon");
+closeMenu.addEventListener("click",() =>{
+    menu.classList.toggle("showMenu");
+})
+
 
 const addShoppingCartButtons = document.querySelectorAll(".addToCart");
 addShoppingCartButtons.forEach((addShoppingButton) =>{
